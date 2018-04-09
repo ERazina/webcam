@@ -99,29 +99,29 @@
 
 
             Webcam.attach( '#my_camera' );
+            function getId(){
+                console.log("snapshot" + Math.random().toString(6).substr(1, 2));
+            }
 
+            getId();
             function take_snapshot() {
-                let element = document.createElement('div');
-                element.classList.add('wrapper');
-                element.innerHTML = `
-                                    <div class="snap1"></div>
-                                     <input type="radio">`;
-                let parent = document.querySelector('sfo-cam');
-                parent.appendChild(element);
+
+
 
                 Webcam.snap( function(data_uri) {
-                    let picture = document.getElementsByClassName('snap1');
-                    for(let i = 0; i < picture.length; i++) {
-                        picture[i].innerHTML = '<img src="' + data_uri + '"/>';
-                    }
-
+                    let element = document.createElement('div');
+                    element.classList.add('wrapper');
+                    element.innerHTML = `<div class="snap">
+                                            <img src="${data_uri}"/>
+                                        </div>
+                                        <input type="radio">`;
+                    let parent = document.querySelector('sfo-cam');
+                    parent.appendChild(element);
                 });
+
             }
 
         </script>
         <a href="javascript:void(take_snapshot())">Сделать фото</a>
-
-
-
 </body>
 </html>

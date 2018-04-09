@@ -24,12 +24,13 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="114" column="24" lean-forward="false" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+            <state relative-caret-position="445">
+              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1523284334049" expanded="true" signature="2661:2781" ph="..." />
-                <marker date="1523284334049" expanded="true" signature="2716:2722" ph="..." />
+                <marker date="1523287166811" expanded="true" signature="2890:2945" ph="..." />
+                <marker date="1523287166811" expanded="true" signature="2890:2946" ph="..." />
+                <marker date="1523287166811" expanded="true" signature="2890:3006" ph="..." />
               </folding>
             </state>
           </provider>
@@ -278,12 +279,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523021656513</updated>
-      <workItem from="1523021658512" duration="12083000" />
+      <workItem from="1523021658512" duration="14608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12083000" />
+    <option name="totallyTimeSpent" value="14608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -404,12 +405,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="114" column="24" lean-forward="false" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+        <state relative-caret-position="445">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1523284334049" expanded="true" signature="2661:2781" ph="..." />
-            <marker date="1523284334049" expanded="true" signature="2716:2722" ph="..." />
+            <marker date="1523287166811" expanded="true" signature="2890:2945" ph="..." />
+            <marker date="1523287166811" expanded="true" signature="2890:2946" ph="..." />
+            <marker date="1523287166811" expanded="true" signature="2890:3006" ph="..." />
           </folding>
         </state>
       </provider>
