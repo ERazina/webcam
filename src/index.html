@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <sfo-cam></sfo-cam>
+
+
+    <template id="sfo-cam">
+
+        <h1>Фотографирование абонента</h1>
+        <h2>Проинформируйте абонента о необходимости сделать фотографию для МТС Банк</h2>
+
+        <input type="checkbox">
+        <span>Абонент не отметил ни одного пункта в РФА</span>
+
+
+        <div id="my_camera" style="width:320px; height:240px;"></div>
+        <div id="my_result"></div>
+
+        <style>
+            #sfo-cam{
+                display: block;
+            }
+
+            h1, h2{
+                font-family: Roboto;
+                font-weight: 400;
+
+            }
+            h1{
+                font-size: 24px;
+                color: rgba(0, 0, 0, 0.87);
+            }
+
+            h2{
+                font-size: 16px;
+                color: rgba(0, 0, 0, 0.54);
+            }
+
+            input[type="checkbox"]{
+                width: 18px;
+                height: 18px;
+                background-color: #2d9cdb;
+            }
+
+            span{
+                font-family: Roboto;
+                font-weight: 400;
+                font-size: 16px;
+                color: rgba(0, 0, 0, 0.87);
+            }
+
+            #my_camera{
+                border: 2px dashed #e0e0e0;
+                padding: 16px;
+            }
+
+        </style>
+
+    </template>
+        <script src="/js/webcam.js"></script>
+        <script src="/js/tracking.js"></script>
+        <script src="/js/face.js"></script>
+
+
+        <script language="JavaScript">
+
+            const doc = (document._currentScript || document.currentScript).ownerDocument;
+            const template = doc.querySelector('#sfo-cam');
+
+            window.customElements.define('sfo-cam', class extends HTMLElement {
+
+
+                constructor() {
+
+                    super();
+
+                    console.log('created');
+                }
+
+
+                connectedCallback() {
+
+                    console.log('added to dom');
+
+                    const tpl = template.content.cloneNode(true);
+                    this.appendChild(tpl);
+                }
+
+            })
+
+
+
+            Webcam.attach( '#my_camera' );
+
+            function take_snapshot() {
+
+                let divElement = document.createElement('div');
+                divElement.classList.add('snap1');
+                document.getElementById('sfo-cam').appendChild(divElement);
+
+                Webcam.snap( function(data_uri) {
+
+                    document.getElementsByClassName('snap1')[0].innerHTML = '<img src="'+data_uri+'"/>';
+
+                } );
+            }
+
+        </script>
+        <a href="javascript:void(take_snapshot())">Сделать фото</a>
+
+
+
+</body>
+</html>
