@@ -67,8 +67,8 @@
 
     </template>
         <script src="/js/webcam.js"></script>
-        <script src="/js/tracking.js"></script>
-        <script src="/js/face.js"></script>
+        <!--<script src="/js/tracking.js"></script>-->
+        <!--<script src="/js/face.js"></script>-->
 
 
         <script language="JavaScript">
@@ -95,23 +95,27 @@
                     this.appendChild(tpl);
                 }
 
-            })
-
+            });
 
 
             Webcam.attach( '#my_camera' );
 
             function take_snapshot() {
-
-                let divElement = document.createElement('div');
-                divElement.classList.add('snap1');
-                document.getElementById('sfo-cam').appendChild(divElement);
+                let element = document.createElement('div');
+                element.classList.add('wrapper');
+                element.innerHTML = `
+                                    <div class="snap1"></div>
+                                     <input type="radio">`;
+                let parent = document.querySelector('sfo-cam');
+                parent.appendChild(element);
 
                 Webcam.snap( function(data_uri) {
+                    let picture = document.getElementsByClassName('snap1');
+                    for(let i = 0; i < picture.length; i++) {
+                        picture[i].innerHTML = '<img src="' + data_uri + '"/>';
+                    }
 
-                    document.getElementsByClassName('snap1')[0].innerHTML = '<img src="'+data_uri+'"/>';
-
-                } );
+                });
             }
 
         </script>
