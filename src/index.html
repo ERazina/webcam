@@ -99,14 +99,9 @@
 
 
             Webcam.attach( '#my_camera' );
-            function getId(){
-                console.log("snapshot" + Math.random().toString(6).substr(1, 2));
-            }
 
             getId();
             function take_snapshot() {
-
-
 
                 Webcam.snap( function(data_uri) {
                     let element = document.createElement('div');
