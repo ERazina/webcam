@@ -2,8 +2,83 @@ sfo-cam {
 
   $input-radio-bg: #2D9CDB;
   $input-checkbox-bg: #2D9CDB;
+  padding-top: 32px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: block;
 
+  #btn{
+    display: block;
+  }
+  .wrapper {
+    display: inline-block;
+    padding: 16px;
+  }
 
+  input{
+    margin: auto;
+    display: block;
+  }
+
+  .ckeckbox{
+    height: 56px;
+    psdding-bottom: 8px;
+  }
+
+  input[type="checkbox"]{
+    margin-left: 0;
+    display: inline-block;
+    line-height: 56px;
+  }
+
+  .input__checkbox {
+    display: none;
+  }
+
+  span{
+    display: inline-block;
+    line-height: 56px;
+  }
+
+  h1, h2{
+    font-family: Roboto;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom : 8px;
+
+  }
+  h1{
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.87);
+
+  }
+
+  h2{
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    background-color: #2d9cdb;
+  }
+
+  span{
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  #my_camera{
+    border: 2px dashed #e0e0e0;
+    padding: 16px;
+  }
+
+  .wrapper{
+    margin-top: 16px;
+  }
 
   @font-face {
     font-family: 'Roboto-Regular';
