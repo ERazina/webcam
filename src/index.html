@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="css/style.css">
+
+
     <title>Document</title>
 </head>
 <body>
@@ -17,27 +19,68 @@
 
         <h1>Фотографирование абонента</h1>
         <h2>Проинформируйте абонента о необходимости сделать фотографию для МТС Банк</h2>
-
-        <input type="checkbox">
-        <span>Абонент не отметил ни одного пункта в РФА</span>
+<div class="ckeckbox">
+    <label class="input">
+        <input class="input__checkbox" type="checkbox" checked="checked">
+        <span class="input__label">Абонент не отметил ни одного пункта в РФА</span>
+    </label>
+</div>
 
 
         <div id="my_camera" style="width:320px; height:240px;"></div>
+        <a href="javascript:void(take_snapshot())">Сделать фото</a>
         <div id="my_result"></div>
 
+
         <style>
-            #sfo-cam{
+            sfo-cam{
+                padding-top: 32px;
+                padding-left: 24px;
+                padding-right: 24px;
                 display: block;
+
+            }
+            .wrapper {
+                display: inline-block;
+                padding: 16px;
+            }
+
+            input{
+                margin: auto;
+                display: block;
+            }
+
+            .ckeckbox{
+                height: 56px;
+                psdding-bottom: 8px;
+            }
+
+            input[type="checkbox"]{
+                margin-left: 0;
+                display: inline-block;
+                line-height: 56px;
+            }
+
+            .input__checkbox {
+                display: none;
+            }
+
+            span{
+                display: inline-block;
+                line-height: 56px;
             }
 
             h1, h2{
                 font-family: Roboto;
                 font-weight: 400;
+                margin: 0;
+                margin-bottom : 8px;
 
             }
             h1{
                 font-size: 24px;
                 color: rgba(0, 0, 0, 0.87);
+
             }
 
             h2{
@@ -61,6 +104,10 @@
             #my_camera{
                 border: 2px dashed #e0e0e0;
                 padding: 16px;
+            }
+
+            .wrapper{
+                margin-top: 16px;
             }
 
         </style>
@@ -97,10 +144,9 @@
 
             });
 
-
+            count();
             Webcam.attach( '#my_camera' );
 
-            getId();
             function take_snapshot() {
 
                 Webcam.snap( function(data_uri) {
@@ -109,14 +155,29 @@
                     element.innerHTML = `<div class="snap">
                                             <img src="${data_uri}"/>
                                         </div>
-                                        <input type="radio">`;
+                                        <label class="input">
+                                          <input class="input__radio" type="radio" checked="checked" name="example">
+                                          <span class="input__label">Radio</span>
+                                          <i class="i-material">radio_button_unchecked</i>
+                                          <i class="i-material i-material--checked">radio_button_checked</i>
+                                        </label>`;
                     let parent = document.querySelector('sfo-cam');
                     parent.appendChild(element);
                 });
-
             }
 
+            function count(){
+                let elems = document.querySelectorAll('wrapper');
+                for(let i = 0; i < elems.length; i++){
+                    if (i > 6){
+                        return;
+                    }
+                }
+            }
+
+
+
         </script>
-        <a href="javascript:void(take_snapshot())">Сделать фото</a>
+
 </body>
 </html>
