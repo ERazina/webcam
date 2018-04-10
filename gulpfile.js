@@ -16,13 +16,19 @@ gulp.task('browser-sync', function() {
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/scss/*.scss', ['scss']);
     gulp.watch('src/js/*.js', ['js']);
+    gulp.watch('src/fonts/*.*', ['fonts']);
 
 });
 
 // HTML
 gulp.task('html', function() {
     gulp.src('src/*.html')
-    .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('build'))
+});
+// fonts
+gulp.task('fonts', function() {
+    gulp.src('src/fonts/*.*')
+        .pipe(gulp.dest('build/fonts'))
 });
 
 // Чистка папки продакшена
@@ -51,10 +57,12 @@ gulp.task('default', function() {
     gulp.run('html');
     gulp.run('scss');
     gulp.run('js');
+    gulp.run('fonts');
     gulp.run('browser-sync');
 
 
     gulp.watch('build/*.html').on('change', browserSync.reload);
+    gulp.watch('build/fonts/*.*').on('change', browserSync.reload);
     // gulp.watch('build/img/*.*').on('change', browserSync.reload);
     gulp.watch('build/js/*.js').on('change', browserSync.reload);
     gulp.watch('build/css/*.css').on('change', browserSync.reload);

@@ -150,9 +150,11 @@
             function take_snapshot() {
 
                 Webcam.snap( function(data_uri) {
-                    let element = document.createElement('div');
-                    element.classList.add('wrapper');
-                    element.innerHTML = `<div class="snap">
+                    let elem = document.querySelectorAll('.wrapper');
+                    if (elem.length < 6) {
+                        let element = document.createElement('div');
+                        element.classList.add('wrapper');
+                        element.innerHTML = `<div class="snap">
                                             <img src="${data_uri}"/>
                                         </div>
                                         <label class="input">
@@ -161,9 +163,12 @@
                                           <i class="i-material">radio_button_unchecked</i>
                                           <i class="i-material i-material--checked">radio_button_checked</i>
                                         </label>`;
-                    let parent = document.querySelector('sfo-cam');
-                    parent.appendChild(element);
+                        let parent = document.querySelector('sfo-cam');
+                        parent.appendChild(element);
+                    }
+                    else{return;}
                 });
+
             }
 
             function count(){
