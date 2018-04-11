@@ -78,6 +78,10 @@ sfo-cam {
     padding: 16px;
   }
 
+  .snap{
+    margin-bottom: 10px;
+  }
+
   .wrapper{
     margin-top: 16px;
   }
@@ -132,7 +136,9 @@ sfo-cam {
   position: relative;
 
   .input__radio {
-    display: none;
+    display: block;
+    padding: 20px;
+
     & + span {
       padding-left: 30px;
       cursor: pointer;
